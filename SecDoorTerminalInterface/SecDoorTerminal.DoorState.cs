@@ -23,7 +23,7 @@ public sealed partial class SecDoorTerminal
         set
         {
             _StateBehaviour?.SetContext(null);
-            _StateBehaviour = StateBehaviour;
+            _StateBehaviour = value;
             _StateBehaviour?.SetContext(this);
         }
     }
