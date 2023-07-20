@@ -3,7 +3,7 @@ using GameData;
 using GTFO.API;
 using LevelGeneration;
 using Localization;
-using SecDoorTerminalInterface.Detour;
+using SecDoorTerminalInterface.Inject;
 using SNetwork;
 using System;
 using System.Collections.Generic;

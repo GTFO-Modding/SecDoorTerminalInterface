@@ -1,7 +1,7 @@
 ﻿using LevelGeneration;
 using Localization;
 using Player;
-using SecDoorTerminalInterface.Detour;
+using SecDoorTerminalInterface.Inject;
 using SNetwork;
 using System;
 using System.Collections.Generic;
@@ -24,7 +24,7 @@ public sealed partial class SecDoorTerminal
 
     private void Setup_CommandModule()
     {
-        Detour_Terminal_ReceiveCmd.OnCmdUsed_LevelInstanced += OnReceiveCommand;
+        Inject_Terminal_ReceiveCmd.OnCmdUsed_LevelInstanced += OnReceiveCommand;
     }
 
     private void OnReceiveCommand(LG_ComputerTerminalCommandInterpreter interpreter, TERM_Command cmd, string inputLine, string param1, string param2)
