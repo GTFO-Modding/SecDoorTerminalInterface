@@ -43,7 +43,7 @@ public sealed partial class SecDoorTerminal
             case CPSolvedBehaviour.OpenDoor:
                 if (SNet.IsMaster)
                 {
-                    ForceOpenDoor();
+                    ForceOpenDoor(0.25f);
                 }
                 break;
 

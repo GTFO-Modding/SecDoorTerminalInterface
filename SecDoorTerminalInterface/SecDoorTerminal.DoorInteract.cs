@@ -1,5 +1,7 @@
-﻿using LevelGeneration;
+﻿using BepInEx.Unity.IL2CPP.Utils.Collections;
+using LevelGeneration;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,6 +55,24 @@ public sealed partial class SecDoorTerminal
         {
             LinkedDoor.m_sync.AttemptDoorInteraction(eDoorInteractionType.Open, 0f, 0f, default, null);
         }
+    }
+
+    public void ForceOpenDoor(float delay)
+    {
+        if (delay > 0.0f)
+        {
+            CoroutineManager.StartCoroutine(OpenDoorWithDelay(delay).WrapToIl2Cpp());
+        }
+        else
+        {
+            ForceOpenDoor();
+        }
+    }
+
+    private IEnumerator OpenDoorWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        LinkedDoor.m_sync.AttemptDoorInteraction(eDoorInteractionType.Open, 0f, 0f, default, null);
     }
 
     public void ForceOpenDoor()
