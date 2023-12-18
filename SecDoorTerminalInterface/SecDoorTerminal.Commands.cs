@@ -73,7 +73,7 @@ public sealed partial class SecDoorTerminal
             onCommandUsed?.Invoke(CmdProcessor);
 
             interpreter.AddOutput(TerminalLineType.Normal, "Desired Action: <color=orange>OVERRIDE</color>", 0.5f);
-            interpreter.AddOutput(TerminalLineType.ProgressWait, "Decrpting Authorize ID..", 0.85f);
+            interpreter.AddOutput(TerminalLineType.ProgressWait, "Decrypting Authorize ID..", 0.85f);
             interpreter.AddOutput(TerminalLineType.SpinningWaitDone, "Sending..", 1.2f);
             interpreter.AddOutput(TerminalLineType.Warning, "<color=orange>OVERRIDE</color> Action sent!", 0.65f);
             SetEndOfQueue(() =>
@@ -101,7 +101,7 @@ public sealed partial class SecDoorTerminal
             onCommandUsed?.Invoke(interpreter);
 
             interpreter.AddOutput(TerminalLineType.Normal, "Desired Action: <color=orange>OPEN</color>", 0.5f);
-            interpreter.AddOutput(TerminalLineType.ProgressWait, "Decrpting Authorize ID..", 0.85f);
+            interpreter.AddOutput(TerminalLineType.ProgressWait, "Decrypting Authorize ID..", 0.85f);
             interpreter.AddOutput(TerminalLineType.SpinningWaitDone, "Sending..", 1.2f);
             interpreter.AddOutput(TerminalLineType.Warning, "<color=orange>OVERRIDE</color> Action sent!", 0.65f);
             SetEndOfQueue(() =>
